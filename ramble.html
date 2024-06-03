@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RambleCoin</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #game {
+            text-align: center;
+        }
+        #clickButton {
+            font-size: 24px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <h1>RambleCoin</h1>
+        <p>Clicks: <span id="clickCount">0</span></p>
+        <button id="clickButton">Click me!</button>
+    </div>
+    <script>
+        let clickCount = 0;
+        const clickCountElement = document.getElementById('clickCount');
+        const clickButton = document.getElementById('clickButton');
+
+        clickButton.addEventListener('click', () => {
+            clickCount++;
+            clickCountElement.textContent = clickCount;
+        });
+    </script>
+</body>
+</html>
