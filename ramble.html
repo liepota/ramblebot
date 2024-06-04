@@ -3,39 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RambleCoin</title>
+    <title>RambleCoin Clicker</title>
     <style>
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-        }
-        #game {
-            text-align: center;
+            background-color: #f0f0f0;
         }
         #clickButton {
+            padding: 20px 40px;
             font-size: 24px;
-            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #clickButton:hover {
+            background-color: #45a049;
+        }
+        #counter {
+            margin-top: 20px;
+            font-size: 32px;
         }
     </style>
 </head>
 <body>
-    <div id="game">
-        <h1>RambleCoin</h1>
-        <p>Clicks: <span id="clickCount">0</span></p>
-        <button id="clickButton">Click me!</button>
-    </div>
-    <script>
-        let clickCount = 0;
-        const clickCountElement = document.getElementById('clickCount');
-        const clickButton = document.getElementById('clickButton');
+    <button id="clickButton">Click me!</button>
+    <div id="counter">Clicks: 0</div>
 
-        clickButton.addEventListener('click', () => {
-            clickCount++;
-            clickCountElement.textContent = clickCount;
+    <script>
+        let count = 0;
+        const button = document.getElementById('clickButton');
+        const counter = document.getElementById('counter');
+
+        button.addEventListener('click', () => {
+            count++;
+            counter.textContent = `Clicks: ${count}`;
         });
     </script>
 </body>
